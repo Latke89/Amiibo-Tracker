@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="amiiboApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+    {{! changing the mustache delimiter so it doesn't conflict with  }}
+    {{! x the default angularjs delimeters - https://mustache.github.io/mustache.5.html for more info  }}
+    {{=<% %>=}}
+    --->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <script src="js/ng-controller.js"></script>
+    <link rel="stylesheet" href="stylesheet.css"/>
+</head>
+<body ng-controller="amiiboController">
+    <input type="hidden" ng-init="smashAmiibo()"/>
+
+    <div>
+        <table>
+            <tr>
+                <th>Amiibo</th>
+                <th>Name</th>
+                <th>Owned</th>
+            </tr>
+            <tr ng-repeat="amiibo in amiiboList">
+                <td><img class="amiiboImage" src="{{amiibo.imagePath}}"/></td>
+                <td>{{amiibo.name}}</td>
+                <td>Do I own it? <p ng-if="amiibo.owned == false">No</p> <p ng-if="amiibo.owned == true">Yes</p>
+                    <br>
+                    <input type="submit" ng-click="toggle(amiibo)" value="Toggle isOwned"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+.amiiboImage {
+    max-height: 300px;
+    max-width: 300px;
+}
+
+.lineImages {
+    display: inline-flex;
+    height: 180px;
+    width: 360px;
+    float: left;
+}
