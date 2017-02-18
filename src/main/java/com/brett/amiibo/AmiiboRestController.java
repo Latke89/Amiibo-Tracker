@@ -52,50 +52,43 @@ public class AmiiboRestController {
 	}
 	@RequestMapping(path = "smashBros.json", method = RequestMethod.POST)
 	public AmiiboContainer smashBros() {
-		AmiiboCategories myLine = lines.findByLine(smash);
 		AmiiboContainer myContainer = new AmiiboContainer();
-		myContainer.myAmiibo = amiibos.findByLineIdOrderByIdAsc(myLine.getId());
-
+		myContainer = putSpecificAmiiboIntoContainer(smash, myContainer);
 		return myContainer;
 	}
 
 	@RequestMapping(path = "animalCrossing.json", method = RequestMethod.POST)
 	public AmiiboContainer animalCrossing() {
-		AmiiboCategories myLine = lines.findByLine(animalCrossing);
 		AmiiboContainer myContainer = new AmiiboContainer();
-		myContainer.myAmiibo = amiibos.findByLineIdOrderByIdAsc(myLine.getId());
+		myContainer = putSpecificAmiiboIntoContainer(animalCrossing, myContainer);
 		return myContainer;
 	}
 
 	@RequestMapping(path = "kirby.json", method = RequestMethod.POST)
 	public AmiiboContainer kirby() {
-		AmiiboCategories myLine = lines.findByLine(kirby);
 		AmiiboContainer myContainer = new AmiiboContainer();
-		myContainer.myAmiibo = amiibos.findByLineIdOrderByIdAsc(myLine.getId());
+		myContainer = putSpecificAmiiboIntoContainer(kirby, myContainer);
 		return myContainer;
 	}
 
 	@RequestMapping(path = "mario.json", method = RequestMethod.POST)
 	public AmiiboContainer marioSeries() {
-		AmiiboCategories myLine = lines.findByLine(marioBros);
 		AmiiboContainer myContainer = new AmiiboContainer();
-		myContainer.myAmiibo = amiibos.findByLineIdOrderByIdAsc(myLine.getId());
+		myContainer = putSpecificAmiiboIntoContainer(marioBros, myContainer);
 		return myContainer;
 	}
 
 	@RequestMapping(path = "splatoon.json", method = RequestMethod.POST)
 	public AmiiboContainer splatoon() {
-		AmiiboCategories myLine = lines.findByLine(splatoon);
 		AmiiboContainer myContainer = new AmiiboContainer();
-		myContainer.myAmiibo = amiibos.findByLineIdOrderByIdAsc(myLine.getId());
+		myContainer = putSpecificAmiiboIntoContainer(splatoon, myContainer);
 		return myContainer;
 	}
 
 	@RequestMapping(path = "zelda.json", method = RequestMethod.POST)
 	public AmiiboContainer zelda() {
-		AmiiboCategories myLine = lines.findByLine(zelda);
 		AmiiboContainer myContainer = new AmiiboContainer();
-		myContainer.myAmiibo = amiibos.findByLineIdOrderByIdAsc(myLine.getId());
+		myContainer = putSpecificAmiiboIntoContainer(zelda, myContainer);
 		return myContainer;
 	}
 

@@ -49,6 +49,66 @@ amiibo.controller('amiiboController', function($scope, $http) {
             });
     };
 
+    $scope.acAmiibo = function() {
+        $http.post("/animalCrossing.json")
+        .then(
+            function successCallBack(response) {
+                var everything = response.data;
+                $scope.amiiboList = everything.myAmiibo;
+            },
+            function errorCallBack(response) {
+                console.log("Unable to receive list of Animal Crossing Amiibo");
+            });
+    };
+
+    $scope.kirbyAmiibo = function() {
+        $http.post("/kirby.json")
+        .then(
+            function successCallBack(response) {
+                var everything = response.data;
+                $scope.amiiboList = everything.myAmiibo;
+            },
+            function errorCallBack(response) {
+                console.log("Unable to receive list of Kirby Amiibo");
+            });
+    };
+
+    $scope.marioAmiibo = function() {
+        $http.post("/mario.json")
+        .then(
+            function successCallBack(response) {
+                var everything = response.data;
+                $scope.amiiboList = everything.myAmiibo;
+            },
+            function errorCallBack(response) {
+                console.log("Unable to receive list of Mario Amiibo");
+            });
+    };
+
+    $scope.splatoonAmiibo = function() {
+        $http.post("/splatoon.json")
+        .then(
+            function successCallBack(response) {
+                var everything = response.data;
+                $scope.amiiboList = everything.myAmiibo;
+            },
+            function errorCallBack(response) {
+                console.log("Unable to receive list of Splatoon Amiibo");
+            });
+    };
+
+    $scope.zeldaAmiibo = function() {
+        $http.post("/zelda.json")
+        .then(
+            function successCallBack(response) {
+                var everything = response.data;
+                $scope.amiiboList = everything.myAmiibo;
+            },
+            function errorCallBack(response) {
+                console.log("Unable to receive list of Zelda Amiibo");
+            });
+    };
+
     $scope.toggle = function(amiibo) {
         $http.post("/toggleSingle.json", amiibo)
         .then(
