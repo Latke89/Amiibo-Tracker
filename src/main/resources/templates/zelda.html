@@ -14,5 +14,26 @@
 </head>
 <body ng-controller="amiiboController">
 
+    <input type="hidden" ng-init="zeldaAmiibo()"/>
+
+    <div>
+        <table>
+            <tr>
+                <th>Amiibo</th>
+                <th>Name</th>
+                <th>Owned</th>
+            </tr>
+            <tr ng-repeat="amiibo in amiiboList">
+                <td><img class="amiiboImage" src="{{amiibo.imagePath}}"/></td>
+                <td>{{amiibo.name}}</td>
+                <td>Do I own it? <p ng-if="amiibo.owned == false">No</p> <p ng-if="amiibo.owned == true">Yes</p>
+                    <br>
+                    <input type="submit" ng-click="toggle(amiibo)" value="Toggle isOwned"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
 </body>
 </html>
